@@ -1,0 +1,4 @@
+# Unload modules needed to run Iris
+module unload python/2.7.10
+module unload scitools
+
