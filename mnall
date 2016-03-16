@@ -1,1 +1,4 @@
-This is a script to open all running cylc suites in separate Unix 'screens'.
+#!/bin/bash
+cd
+screen -S screen1
+
