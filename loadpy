@@ -5,4 +5,4 @@ module load python/2.7.10
 module load scitools
 
 # Change PS1 to highlight Python environment
-export PS1="python > "
+export PS1="Python > "
