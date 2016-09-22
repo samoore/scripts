@@ -1,0 +1,2 @@
+# In tmux, to send commands to all panes
+:setw synchronize-panes
