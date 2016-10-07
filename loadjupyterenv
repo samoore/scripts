@@ -1,0 +1,2 @@
+module load python/anaconda-2.4.1-python-2.7
+jupyter notebook --no-browser
