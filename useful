@@ -1,2 +1,7 @@
 # In tmux, to send commands to all panes
 :setw synchronize-panes
+
+#Bash loop over all *.nc files, change a global attribute using CDO and then
+#append a specific suffix at the end
+for file in *.nc; do cdo setgatt,update_freq_in_hours,12 $file ${file%.*}-12h.nc; done
+
