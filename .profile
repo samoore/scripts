@@ -1,3 +1,6 @@
+# tmux on startup always has this module loaded for some reason so unload it...
+module unload python/anaconda-2.4.1-python-2.7
+
 # Define UMDIR
 export UMDIR=/oper/admin/um_fcm/um
 
@@ -25,6 +28,8 @@ alias l='ls -lrth'
 alias gcon='rose suite-gcontrol'
 # Display line numbers and percentage through file
 alias less='less -M -N'
+# Alias to `rose suite-run`
+alias rsr='rose suite-run'
 # Go to /hpcf/working/williamsjh directory
 alias working='cd /hpcf/working/williamsjh/'
 # Go to /hpcf/data/williamsjh directory
@@ -41,6 +46,8 @@ alias log='rose suite-log'
 alias cr='cd /hpcf/working/williamsjh/cylc-run'
 # Alias fdg to 'fcm diff -g &'
 alias fdg='fcm diff -g &'
+# Alias for `cylc trigger` in PWD 
+alias trig='cylc trigger $(basename "$PWD")'
 # Aliases for local calls to '> cylc monitor/stop/kill [suite-ID]'. 
 alias mn='cylc monitor $(basename "$PWD")'
 alias cylc-stop='cylc stop $(basename "$PWD")'
@@ -82,8 +89,9 @@ alias gscn='cylc gscan&'
 # Edit command prompt
 export PS1="\d|\t|\W> "
 # Update contents of directory every 2s
-alias w='watch "ls -lrth|tail"'
-
+alias wtch='watch "ls -lth"'
+# Alias for going to my deepsouth folder
+alias deep='cd /hpcf/working/deepsouth/williamsjh'
 
 
 # Define gedit to be the svn and fcm commit editor (vim, gvim -f, emacs, gedit, kate, nedit)
@@ -94,6 +102,8 @@ export SVN_EDITOR=vim
 export PATH=/home/williamsjh/scripts:$PATH
 # Add ~/local/bin
 export PATH=/home/williamsjh/local/bin:$PATH
+# Add ancil_2anc
+export PATH=/home/williamsjh/Python/usr/lib/python2.7/site-packages/ants/bin:$PATH
 
 # Python things to load on startup
 export PYTHONSTARTUP=/home/williamsjh/.PYTHONSTARTUP
@@ -106,6 +116,29 @@ export BONOBO_ACTIVATION_PATH=$HOME/.bonobo
 
 #Use local Cylc fork
 #export CYLC_HOME=$HOME/cylc
+
+# Add ants and cf_units to my PYTHONPATH if the user wants to!
+# Code from
+# http://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script,
+# accessed February 1st 2017.
+while true; do
+    read -p "Do you wish to use Jonny Williams' personal installs of the ants and cf_units Python modules?" yn
+    case $yn in
+        [Yy]* ) module load python/anaconda-2.4.1-python-2.7; export PYTHONPATH=/home/williamsjh/Python/usr/lib/python2.7/site-packages:/home/williamsjh/Python/usr/lib/python2.7/site-packages/ants/lib:$PYTHONPATH; break;;
+        [Nn]* ) echo "You have chosen not to be able to use ANTS and cf_units"; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+
+
+
+
+
+
+
+
+
 
 
 
