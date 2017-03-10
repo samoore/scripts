@@ -53,6 +53,8 @@ alias mn='cylc monitor $(basename "$PWD")'
 alias cylc-stop='cylc stop $(basename "$PWD")'
 alias cylc-kill='cylc kill $(basename "$PWD")'
 alias ks='cylc kill $(basename "$PWD");cylc stop --now $(basename "$PWD")'
+# cd to a Cylc suite's `work` directory and see how may atmos t steps have run
+alias wtchsuite='watch "grep -ir atm_step */*/pe_output/*00|tail"'
 # Open 'fcm diff' in less
 alias fcmdiff='fcm diff|less'
 # Alias to '> rose edit &'
@@ -125,7 +127,7 @@ while true; do
     read -p "Do you wish to use Jonny Williams' personal installs of the ants and cf_units Python modules?" yn
     case $yn in
         [Yy]* ) module load python/anaconda-2.4.1-python-2.7; export PYTHONPATH=/home/williamsjh/Python/usr/lib/python2.7/site-packages:/home/williamsjh/Python/usr/lib/python2.7/site-packages/ants/lib:$PYTHONPATH; break;;
-        [Nn]* ) echo "You have chosen not to be able to use ANTS and cf_units"; break;;
+        [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
