@@ -34,6 +34,8 @@ alias rsr='rose suite-run'
 alias working='cd /hpcf/working/williamsjh/'
 # Go to /hpcf/data/williamsjh directory
 alias data='cd /hpcf/data/williamsjh/'
+# Go to rose bush
+alias rb='firefox http://wrh-1.hpcf.niwa.co.nz:8080/suites/williamsjh &'
 # Go to ~/roses
 alias c='clear'
 # Go to ~/roses
@@ -93,7 +95,7 @@ export PS1="\d|\t|\W> "
 # Update contents of directory every 2s
 alias wtch='watch "ls -lth"'
 # Alias for going to my deepsouth folder
-alias deep='cd /hpcf/working/deepsouth/williamsjh'
+alias deep='cd /hpcf/working/deepsouth/'
 
 
 # Define gedit to be the svn and fcm commit editor (vim, gvim -f, emacs, gedit, kate, nedit)
