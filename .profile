@@ -7,6 +7,7 @@ export UMDIR=/oper/admin/um_fcm/um
 # PATH additions
 export PATH=/oper/admin/um_fcm/bin:$PATH
 export PATH=/oper/admin/um_fcm/fcm/latest/bin:$PATH
+export PATH=/home/williamsjh/nemo/trunk/NEMOGCM/TOOLS/REBUILD_NEMO:$PATH
 
 # Use more recent version of Perl on AIX (needed for FCM)
 if [[ $(uname) == AIX ]]; then 
