@@ -33,7 +33,7 @@ for year in {1978..1987..1}; do
         cdo -O timmean ./${suite}o_10d_$((year+1))1101_$((year+1))1130_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))1101_$((year+1))1130_eorca1_${filetype}.nc
 
         #delete temporary files
-        rm ./*10d*??????01_??????30*${filetype}
+        rm ./*10d*??????01_??????30*${filetype}.nc
 
         #assemble 1m means for each season
         cdo -O cat ./processed/*1m*${year}12*${filetype}* ./processed/*1m*$((year+1))0[12]* ./${suite}o_1m_${year}1201_$((year+1))0230_eorca1_${filetype}.nc
