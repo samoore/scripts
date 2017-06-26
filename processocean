@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export suite='ac926'
 
 for year in {1978..1987..1}; do
