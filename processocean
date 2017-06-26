@@ -62,3 +62,7 @@ for year in {1978..1987..1}; do
     done
 done
 
+#edit file metadata which is needed for the MOC calculations to work
+
+cd processed
+for file in *.nc; do ncatted -a coordinates,,m,c,'time_counter nav_lat nav_lon' $file; done
