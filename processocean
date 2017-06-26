@@ -1,8 +1,20 @@
 #!/usr/bin/env bash
 
-export suite='ac926'
+mkdir processed
 
-for year in {1978..1987..1}; do
+echo -n "Enter the suite ID omitting the prefix, e.g. ac926 : "
+read suite
+echo "Processing the data for : $suite"
+
+echo -n "Enter the start year (December) : "
+read year1
+echo "Processing the data for : $year1"
+
+echo -n "Enter the end year (November) : "
+read year2
+echo "Processing the data for : $year2"
+
+for year in $(seq $year1 $year2); do
 
     for filetype in U V T; do
 
