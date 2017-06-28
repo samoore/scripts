@@ -6,6 +6,9 @@ echo -n "Enter the suite ID omitting the prefix, e.g. ac926 : "
 read suite
 echo "Processing the data for : $suite"
 
+echo "Bear in mind for the next questions that for a 1 year validation note the
+start and end years are the same!"
+
 echo -n "Enter the start year (December) : "
 read year1
 echo "Processing the data for : $year1"
