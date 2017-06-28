@@ -16,67 +16,60 @@ echo "Processing the data for : $year2"
 
 for year in $(seq $year1 $year2); do
 
-    for filetype in U V T; do
-
         #assemble 10d means for each month
-        cdo -O cat *${year}12*${filetype}* ./${suite}o_10d_${year}1201_${year}1230_eorca1_${filetype}.nc 
-        cdo -O cat *$((year+1))01*${filetype}* ./${suite}o_10d_$((year+1))0101_$((year+1))0130_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))02*${filetype}* ./${suite}o_10d_$((year+1))0201_$((year+1))0230_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))03*${filetype}* ./${suite}o_10d_$((year+1))0301_$((year+1))0330_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))04*${filetype}* ./${suite}o_10d_$((year+1))0401_$((year+1))0430_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))05*${filetype}* ./${suite}o_10d_$((year+1))0501_$((year+1))0530_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))06*${filetype}* ./${suite}o_10d_$((year+1))0601_$((year+1))0630_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))07*${filetype}* ./${suite}o_10d_$((year+1))0701_$((year+1))0730_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))08*${filetype}* ./${suite}o_10d_$((year+1))0801_$((year+1))0830_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))09*${filetype}* ./${suite}o_10d_$((year+1))0901_$((year+1))0930_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))10*${filetype}* ./${suite}o_10d_$((year+1))1001_$((year+1))1030_eorca1_${filetype}.nc
-        cdo -O cat *$((year+1))11*${filetype}* ./${suite}o_10d_$((year+1))1101_$((year+1))1130_eorca1_${filetype}.nc
+        cdo -O cat *${year}-12-*.nc ./${suite}i.10d.${year}-12-all.nc 
+        cdo -O cat *$((year+1))-01-*.nc ./${suite}i.10d.$((year+1))-01-all.nc 
+        cdo -O cat *$((year+1))-02-*.nc ./${suite}i.10d.$((year+1))-02-all.nc 
+        cdo -O cat *$((year+1))-03-*.nc ./${suite}i.10d.$((year+1))-03-all.nc 
+        cdo -O cat *$((year+1))-04-*.nc ./${suite}i.10d.$((year+1))-04-all.nc 
+        cdo -O cat *$((year+1))-05-*.nc ./${suite}i.10d.$((year+1))-05-all.nc 
+        cdo -O cat *$((year+1))-06-*.nc ./${suite}i.10d.$((year+1))-06-all.nc 
+        cdo -O cat *$((year+1))-07-*.nc ./${suite}i.10d.$((year+1))-07-all.nc 
+        cdo -O cat *$((year+1))-08-*.nc ./${suite}i.10d.$((year+1))-08-all.nc 
+        cdo -O cat *$((year+1))-09-*.nc ./${suite}i.10d.$((year+1))-09-all.nc 
+        cdo -O cat *$((year+1))-10-*.nc ./${suite}i.10d.$((year+1))-10-all.nc 
+        cdo -O cat *$((year+1))-11-*.nc ./${suite}i.10d.$((year+1))-11-all.nc 
 
         #calculate each monthly mean
-        cdo -O timmean ./${suite}o_10d_${year}1201_${year}1230_eorca1_${filetype}.nc ./processed/${suite}o_1m_${year}1201_${year}1230_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0101_$((year+1))0130_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0101_$((year+1))0130_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0201_$((year+1))0230_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0201_$((year+1))0230_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0301_$((year+1))0330_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0301_$((year+1))0330_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0401_$((year+1))0430_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0401_$((year+1))0430_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0501_$((year+1))0530_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0501_$((year+1))0530_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0601_$((year+1))0630_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0601_$((year+1))0630_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0701_$((year+1))0730_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0701_$((year+1))0730_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0801_$((year+1))0830_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0801_$((year+1))0830_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))0901_$((year+1))0930_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))0901_$((year+1))0930_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))1001_$((year+1))1030_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))1001_$((year+1))1030_eorca1_${filetype}.nc
-        cdo -O timmean ./${suite}o_10d_$((year+1))1101_$((year+1))1130_eorca1_${filetype}.nc ./processed/${suite}o_1m_$((year+1))1101_$((year+1))1130_eorca1_${filetype}.nc
+        cdo -O timmean ./${suite}i.10d.${year}-12-all.nc ./processed/${suite}i.1m.${year}-12.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-01-all.nc ./processed/${suite}i.1m.$((year+1))-01.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-02-all.nc ./processed/${suite}i.1m.$((year+1))-02.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-03-all.nc ./processed/${suite}i.1m.$((year+1))-03.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-04-all.nc ./processed/${suite}i.1m.$((year+1))-04.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-05-all.nc ./processed/${suite}i.1m.$((year+1))-05.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-06-all.nc ./processed/${suite}i.1m.$((year+1))-06.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-07-all.nc ./processed/${suite}i.1m.$((year+1))-07.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-08-all.nc ./processed/${suite}i.1m.$((year+1))-08.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-09-all.nc ./processed/${suite}i.1m.$((year+1))-09.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-10-all.nc ./processed/${suite}i.1m.$((year+1))-10.nc 
+        cdo -O timmean ./${suite}i.10d.$((year+1))-11-all.nc ./processed/${suite}i.1m.$((year+1))-11.nc 
 
         #delete temporary files
-        rm ./*10d*??????01_??????30*${filetype}.nc
+        rm ./${suite}i.10d.????-??-all.nc 
 
         #assemble 1m means for each season
-        cdo -O cat ./processed/*1m*${year}12*${filetype}* ./processed/*1m*$((year+1))0[12]* ./${suite}o_1m_${year}1201_$((year+1))0230_eorca1_${filetype}.nc
-        cdo -O cat ./processed/*1m*$((year+1))0[345]*${filetype}* ./${suite}o_1m_$((year+1))0301_$((year+1))0530_eorca1_${filetype}.nc
-        cdo -O cat ./processed/*1m*$((year+1))0[678]*${filetype}* ./${suite}o_1m_$((year+1))0601_$((year+1))0830_eorca1_${filetype}.nc
-        cdo -O cat ./processed/*1m*$((year+1))09*${filetype}* ./processed/*1m*$((year+1))1[012]* ./${suite}o_1m_$((year+1))0901_$((year+1))1130_eorca1_${filetype}.nc
+        cdo -O cat ./processed/${suite}i.1m.${year}-12.nc ./processed/${suite}i.1m.$((year+1))-0[12].nc ./${suite}i.1m.${year}-12-all.nc   
+        cdo -O cat ./processed/${suite}i.1m.$((year+1))-0[345].nc  ./${suite}i.1m.$((year+1))-03-all.nc   
+        cdo -O cat ./processed/${suite}i.1m.$((year+1))-0[678].nc  ./${suite}i.1m.$((year+1))-06-all.nc   
+        cdo -O cat ./processed/${suite}i.1m.$((year+1))-{09,10,11}.nc  ./${suite}i.1m.$((year+1))-09-all.nc   
 
-        #calculate monthly means
-        cdo -O timmean ./${suite}o_1m_${year}1201_$((year+1))0230_eorca1_${filetype}.nc ./processed/${suite}o_1s_${year}1201_$((year+1))0230_eorca1_${filetype}.nc 
-        cdo -O timmean ./${suite}o_1m_$((year+1))0301_$((year+1))0530_eorca1_${filetype}.nc ./processed/${suite}o_1s_$((year+1))0301_$((year+1))0530_eorca1_${filetype}.nc 
-        cdo -O timmean ./${suite}o_1m_$((year+1))0601_$((year+1))0830_eorca1_${filetype}.nc ./processed/${suite}o_1s_$((year+1))0601_$((year+1))0830_eorca1_${filetype}.nc 
-        cdo -O timmean ./${suite}o_1m_$((year+1))0901_$((year+1))1130_eorca1_${filetype}.nc ./processed/${suite}o_1s_$((year+1))0901_$((year+1))1130_eorca1_${filetype}.nc 
+        #calculate seasonal means
+        cdo -O timmean ./${suite}i.1m.${year}-12-all.nc ./processed/${suite}i.1s.${year}-12.nc  
+        cdo -O timmean ./${suite}i.1m.$((year+1))-03-all.nc ./processed/${suite}i.1s.$((year+1))-03.nc  
+        cdo -O timmean ./${suite}i.1m.$((year+1))-06-all.nc ./processed/${suite}i.1s.$((year+1))-06.nc  
+        cdo -O timmean ./${suite}i.1m.$((year+1))-09-all.nc ./processed/${suite}i.1s.$((year+1))-09.nc  
 
         #delete temporary files
-        rm ./${suite}o_1m_${year}1201_$((year+1))0230_eorca1_${filetype}.nc ./${suite}o_1m_$((year+1))0301_$((year+1))0530_eorca1_${filetype}.nc ./${suite}o_1m_$((year+1))0601_$((year+1))0830_eorca1_${filetype}.nc ./${suite}o_1m_$((year+1))0901_$((year+1))1130_eorca1_${filetype}.nc  
+        rm ./${suite}i.1m.${year}-12-all.nc ./${suite}i.1m.$((year+1))-0[369]-all.nc
 
-        #assemable 1s means for the year
-        cdo -O cat ./processed/*1s*${year}12*${filetype}* ./processed/*1s*$((year+1))0[369]*${filetype}* ./${suite}o_1s_${year}1201_$((year+1))1130_eorca1_${filetype}.nc
+        #assemble 1s means for the year
+        cdo -O cat ./processed/${suite}i.1s.${year}-12.nc ./processed/${suite}i.1s.$((year+1))-0[369].nc ./${suite}i.1s.${year}-all.nc  
 
         #calculate annual mean 
-        cdo -O timmean ./${suite}o_1s_${year}1201_$((year+1))1130_eorca1_${filetype}.nc  ./processed/${suite}o_1y_${year}1201_$((year+1))1130_eorca1_${filetype}.nc
+        cdo -O timmean ./${suite}i.1s.${year}-all.nc ./processed/${suite}i.1y.${year}.nc 
 
         #delete temporary files
-        rm ./${suite}o_1s_${year}1201_$((year+1))1130_eorca1_${filetype}.nc
+        rm ./${suite}i.1s.${year}-all.nc
 
-    done
 done
 
-#edit file metadata which is needed for the MOC calculations to work
-
-cd processed
-for file in *.nc; do ncatted -a coordinates,,m,c,'time_counter nav_lat nav_lon' $file; done
