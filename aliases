@@ -20,7 +20,7 @@ alias c='clear'
 alias r='cd ~/roses'
 # Go to ~branches/
 alias br='cd ~/branches'
-# Alias log to 'rose suite-log'
+# Alias cr to 'cd ~/cylc-run'
 alias log='rose suite-log'
 # Alias cr to 'cd ~/cylc-run'
 alias cr='cd /hpcf/working/williamsjh/cylc-run'

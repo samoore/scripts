@@ -4,6 +4,11 @@ module unload python/anaconda-2.4.1-python-2.7
 # Define UMDIR
 export UMDIR=/oper/admin/um_fcm/um
 
+#Use working copy of Rose
+#export ROSE_HOME_ROOT=/home/williamsjh
+#export ROSE_HOME=$ROSE_HOME_ROOT/rose
+
+
 # PATH additions
 export PATH=/oper/admin/um_fcm/bin:$PATH
 export PATH=/oper/admin/um_fcm/fcm/latest/bin:$PATH
@@ -46,6 +51,7 @@ export BONOBO_ACTIVATION_PATH=$HOME/.bonobo
 #Use local Cylc fork
 #export CYLC_HOME=$HOME/cylc
 
+#export CYLC_VERSION=7.5.0
 # Add ants and cf_units to my PYTHONPATH if the user wants to!
 # Code from
 # http://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script,

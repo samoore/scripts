@@ -73,3 +73,5 @@ for year in $(seq $year1 $year2); do
 
 done
 
+cd processed
+rename .nc -eorca1.nc *.nc
