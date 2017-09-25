@@ -69,7 +69,7 @@ alias gits='git status'
 # Alias to `cylc gscan`
 alias gscn='cylc gscan&'
 # Edit command prompt
-export PS1="\d|\t|\W> "
+export PS1="$HOSTNAME|\d|\t|\W> "
 # Update contents of directory every 2s
 alias wtch='watch "ls -lth"'
 # Alias for going to my deepsouth folder
