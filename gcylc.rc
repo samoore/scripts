@@ -1,0 +1,64 @@
+ungrouped views = graph, text
+initial side-by-side views = True
+use theme = color-blind
+dot icon size = medium
+initial views =  text, graph
+task filter highlight color = PowderBlue
+sort by definition order = True
+[themes]
+   [[default]]
+      succeeded = "color=#ada5a5", "fontcolor=black", "style=filled"
+      held = "color=#fe83ff", "fontcolor=black", "style=unfilled"
+      expired = "color=#000000", "fontcolor=black", "style=unfilled"
+      submit-retrying = "color=#fa7e00", "fontcolor=black", "style=unfilled"
+      waiting = "color=#88c6ff", "fontcolor=black", "style=unfilled"
+      submitted = "color=#a1cf25", "fontcolor=black", "style=filled"
+      failed = "color=#ff0000", "fontcolor=white", "style=filled"
+      running = "color=#00c140", "fontcolor=black", "style=filled"
+      submit-failed = "color=#ff007e", "fontcolor=white", "style=filled"
+      ready = "color=#a08f49", "fontcolor=black", "style=unfilled"
+      runahead = "color=#b35bfd", "fontcolor=black", "style=unfilled"
+      retrying = "color=#ff7e00", "fontcolor=black", "style=unfilled"
+      queued = "color=#dcd901", "fontcolor=black", "style=unfilled"
+   [[solid]]
+      succeeded = "color=#ada5a5", "fontcolor=black", "style=filled"
+      held = "color=#fe83ff", "fontcolor=black", "style=filled"
+      expired = "color=#000000", "fontcolor=white", "style=filled"
+      submit-retrying = "color=#fa7e00", "fontcolor=black", "style=filled"
+      waiting = "color=#88c6ff", "fontcolor=black", "style=filled"
+      submitted = "color=#a1cf25", "fontcolor=black", "style=filled"
+      failed = "color=#ff0000", "fontcolor=white", "style=filled"
+      running = "color=#00c140", "fontcolor=black", "style=filled"
+      submit-failed = "color=#ff007e", "fontcolor=white", "style=filled"
+      ready = "color=#a08f49", "fontcolor=black", "style=filled"
+      runahead = "color=#b35bfd", "fontcolor=black", "style=filled"
+      retrying = "color=#ff7e00", "fontcolor=black", "style=filled"
+      queued = "color=#dcd901", "fontcolor=black", "style=filled"
+   [[high-contrast]]
+      succeeded = "color=#555454", "fontcolor=white", "style=filled"
+      held = "color=#fc00ff", "fontcolor=white", "style=filled"
+      expired = "color=#000000", "fontcolor=white", "style=filled"
+      submit-retrying = "color=#ffaf6f", "fontcolor=white", "style=filled"
+      waiting = "color=#008ed3", "fontcolor=white", "style=filled"
+      submitted = "color=#76a200", "fontcolor=black", "style=filled"
+      failed = "color=#ff0035", "fontcolor=white", "style=filled"
+      running = "color=#008e27", "fontcolor=white", "style=filled"
+      submit-failed = "color=#ff6f00", "fontcolor=white", "style=filled"
+      ready = "color=#9c8320", "fontcolor=white", "style=filled"
+      runahead = "color=#8000c0", "fontcolor=white", "style=filled"
+      retrying = "color=#ff6282", "fontcolor=white", "style=filled"
+      queued = "color=#e6c522", "fontcolor=black", "style=filled"
+   [[color-blind]]
+      succeeded = "color=#cccccc", "fontcolor=black", "style=filled"
+      held = "color=#9900cc", "fontcolor=black", "style=filled"
+      expired = "color=#000000", "fontcolor=white", "style=filled"
+      submit-retrying = "color=#007777", "fontcolor=black", "style=filled"
+      waiting = "color=#00ccff", "fontcolor=black", "style=filled"
+      submitted = "color=#ff9933", "fontcolor=black", "style=filled"
+      failed = "color=#ff3333", "fontcolor=black", "style=filled"
+      running = "color=#66ff33", "fontcolor=black", "style=filled"
+      submit-failed = "color=#ff3333", "fontcolor=black", "style=unfilled"
+      ready = "color=#d2800a", "fontcolor=black", "style=unfilled"
+      runahead = "color=#000000", "fontcolor=black", "style=filled"
+      retrying = "color=#009999", "fontcolor=black", "style=filled"
+      queued = "color=#336600", "fontcolor=black", "style=filled"
