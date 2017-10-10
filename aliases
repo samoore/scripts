@@ -20,10 +20,10 @@ alias c='clear'
 alias r='cd ~/roses'
 # Go to ~branches/
 alias br='cd ~/branches'
-# Alias cr to 'cd ~/cylc-run'
+# Alias log to 'rose suite-log'
 alias log='rose suite-log'
 # Alias cr to 'cd ~/cylc-run'
-alias cr='cd /hpcf/working/williamsjh/cylc-run'
+alias cr='cd ~/cylc-run'
 # Alias fdg to 'fcm diff -g &'
 alias fdg='fcm diff -g &'
 # Alias for `cylc trigger` in PWD 
