@@ -4,6 +4,8 @@
 
 basedir=/group_workspaces/jasmin2/tids
 
+cd $basedir
+
 outfile=TIDS_files_to_retrieve
 
 echo \#\#\#\#\# > /$outfile
@@ -14,7 +16,7 @@ for i in $(seq 1 3)
 
     if [ $i -eq 1 ]; then
 
-        dir=$basedir/UM/ancil/atmos/n96e
+        dir=UM/ancil/atmos/n96e
 
         echo $i 
         echo $dir
@@ -23,7 +25,7 @@ for i in $(seq 1 3)
 
     if [ $i -eq 2 ]; then
 
-        dir=$basedir/UM/ancil/atmos/n216e
+        dir=UM/ancil/atmos/n216e
 
         echo $i 
         echo $dir
@@ -33,7 +35,7 @@ for i in $(seq 1 3)
 
     if [ $i -eq 3 ]; then
 
-        dir=$basedir/OCEAN
+        dir=OCEAN
 
         echo $i 
         echo $dir
