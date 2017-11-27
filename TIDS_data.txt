@@ -46,7 +46,7 @@ for i in $(seq 1 3)
 
     find $dir -name "[!.]*" -type f >> ~/$outfile 
 
-    paste $outfile $outfile > $outfile_2_column
+    paste $outfile $outfile > 2_column_$outfile
 
 done
 
