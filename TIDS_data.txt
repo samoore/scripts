@@ -1,38 +1,49 @@
+#!/bin/bash
+
 # UM
 
 basedir=/group_workspaces/jasmin2/tids
 
-dir=$basedir/UM/ancil/atmos/n96e
 
-echo \#\#\#\#\#> ~/out
-echo \#$dir >> ~/out
-echo \#\#\#\#\#>> ~/out
+echo \#\#\#\#\# > ~/TIDS_data.txt
 
-find $dir -name "[!.]*" -type f >> ~/out 
+for i in $(seq 1 3)
 
-dir=$basedir/UM/ancil/atmos/n216e
+    do 
 
-echo \#\#\#\#\#>> ~/out
-echo \#$dir >> ~/out
-echo \#\#\#\#\#>> ~/out
+    if [ $i -eq 1 ]; then
 
-find $dir -name "[!.]*" -type f >> ~/out 
+        dir=$basedir/UM/ancil/atmos/n96e
 
+        echo $i 
+        echo $dir
 
-# ocean and sea ice
+    fi
 
+    if [ $i -eq 2 ]; then
 
+        dir=$basedir/UM/ancil/atmos/n216e
 
-#find OCEAN/ -name "[!.]*" -type f > ~/out
+        echo $i 
+        echo $dir
 
-dir=$basedir/OCEAN
-
-echo \#\#\#\#\#>> ~/out
-echo \#$dir >> ~/out
-echo \#\#\#\#\#>> ~/out
-
-find $dir -name "[!.]*" -type f >> ~/out 
+    fi
 
 
+    if [ $i -eq 3 ]; then
 
+        dir=$basedir/OCEAN
+
+        echo $i 
+        echo $dir
+
+    fi
+
+    echo \#\#\#\#\#>> ~/TIDS_data.txt
+    echo \#$dir >> ~/TIDS_data.txt
+    echo \#\#\#\#\#>> ~/TIDS_data.txt
+
+    find $dir -name "[!.]*" -type f >> ~/TIDS_data.txt 
+
+done
 
