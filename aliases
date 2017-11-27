@@ -66,6 +66,7 @@ alias gconall='for folder in *; do cd ~/cylc-run; cd $folder; rose suite-gcontro
 alias gita='git add .'
 alias gitb='git branch'
 alias gitac='git add . && git commit'
+alias gitacp='git add . && git commit -m "minor tweaks" && git push'
 alias gitc='git commit'
 alias gits='git status'
 # Alias to `cylc gscan`

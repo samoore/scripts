@@ -1,0 +1,38 @@
+# UM
+
+basedir=/group_workspaces/jasmin2/tids
+
+dir=$basedir/UM/ancil/atmos/n96e
+
+echo \#\#\#\#\#> ~/out
+echo \#$dir >> ~/out
+echo \#\#\#\#\#>> ~/out
+
+find $dir -name "[!.]*" -type f >> ~/out 
+
+dir=$basedir/UM/ancil/atmos/n216e
+
+echo \#\#\#\#\#>> ~/out
+echo \#$dir >> ~/out
+echo \#\#\#\#\#>> ~/out
+
+find $dir -name "[!.]*" -type f >> ~/out 
+
+
+# ocean and sea ice
+
+
+
+#find OCEAN/ -name "[!.]*" -type f > ~/out
+
+dir=$basedir/OCEAN
+
+echo \#\#\#\#\#>> ~/out
+echo \#$dir >> ~/out
+echo \#\#\#\#\#>> ~/out
+
+find $dir -name "[!.]*" -type f >> ~/out 
+
+
+
+
