@@ -4,9 +4,9 @@
 
 basedir=/group_workspaces/jasmin2/tids
 
-outfile=TIDS_data.txt
+outfile=$outfile
 
-echo \#\#\#\#\# > ~/$outfile
+echo \#\#\#\#\# > /$outfile
 
 for i in $(seq 1 3)
 
@@ -40,13 +40,14 @@ for i in $(seq 1 3)
 
     fi
 
-    echo \#\#\#\#\#>> ~/TIDS_data.txt
-    echo \#$dir >> ~/TIDS_data.txt
-    echo \#\#\#\#\#>> ~/TIDS_data.txt
+    echo \#\#\#\#\#>> /$outfile
+    echo \#$dir >> /$outfile
+    echo \#\#\#\#\#>> /$outfile
 
-    find $dir -name "[!.]*" -type f >> ~/$outfile 
+    find $dir -name "[!.]*" -type f >> /$outfile 
 
     paste $outfile $outfile > 2_column_$outfile
+    rm $outfile
 
 done
 
