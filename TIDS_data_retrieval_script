@@ -4,7 +4,7 @@
 
 basedir=/group_workspaces/jasmin2/tids
 
-outfile=$outfile
+outfile=TIDS_files_to_retrieve
 
 echo \#\#\#\#\# > /$outfile
 
