@@ -40,11 +40,11 @@ for i in $(seq 1 3)
 
     fi
 
-    echo \#\#\#\#\#>> /$outfile
-    echo \#$dir >> /$outfile
-    echo \#\#\#\#\#>> /$outfile
+    echo \#\#\#\#\#>> $outfile
+    echo \#$dir >> $outfile
+    echo \#\#\#\#\#>> $outfile
 
-    find $dir -name "[!.]*" -type f >> /$outfile 
+    find $dir -name "[!.]*" -type f >> $outfile 
 
     paste $outfile $outfile > 2_column_$outfile
     rm $outfile
