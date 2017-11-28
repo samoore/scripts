@@ -2,13 +2,13 @@
 
 # UM
 
-basedir=/group_workspaces/jasmin2/tids
+tids=/group_workspaces/jasmin2/tids
 
 cd $basedir
 
 outfile=TIDS_files_to_retrieve
 
-echo \#\#\#\#\# > /$outfile
+echo \#\#\#\#\# > $outfile
 
 for i in $(seq 1 3)
 
@@ -49,7 +49,10 @@ for i in $(seq 1 3)
     find $dir -name "[!.]*" -type f >> $outfile 
 
     paste $outfile $outfile > 2_column_$outfile
-    rm $outfile
+
 
 done
 
+mv /group_workspaces/jasmin2/tids/2_column_$outfile ~/scripts/
+rm $tids/$outfile
+cd ~/scripts

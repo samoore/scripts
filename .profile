@@ -56,15 +56,14 @@ export BONOBO_ACTIVATION_PATH=$HOME/.bonobo
 # Code from
 # http://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script,
 # accessed February 1st 2017.
-while true; do
-    read -p "Do you want to use Jonny Williams' personal installs of the ants and cf_units Python modules?" yn
-    case $yn in
-        [Yy]* ) module load python/anaconda-2.4.1-python-2.7; export PYTHONPATH=/home/williamsjh/Python/usr/lib/python2.7/site-packages:/home/williamsjh/Python/usr/lib/python2.7/site-packages/ants/lib:$PYTHONPATH; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
-
+#while true; do
+#    read -p "Do you want to use Jonny Williams' personal installs of the ants and cf_units Python modules?" yn
+#    case $yn in
+#        [Yy]* ) module load python/anaconda-2.4.1-python-2.7; export PYTHONPATH=/home/williamsjh/Python/usr/lib/python2.7/site-packages:/home/williamsjh/Python/usr/lib/python2.7/site-packages/ants/lib:$PYTHONPATH; break;;
+#        [Nn]* ) break;;
+#        * ) echo "Please answer yes or no.";;
+#    esac
+#done
 
 
 
