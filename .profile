@@ -22,8 +22,8 @@ else
 fi
 
 # Cache the MOSRS password
-[[ "$-" != *i* || $(uname) == AIX ]] && return # Stop here if not running interactively
-source ~um_fcm/bin/mosrs-setup-gpg-agent
+#[[ "$-" != *i* || $(uname) == AIX ]] && return # Stop here if not running interactively
+#source ~um_fcm/bin/mosrs-setup-gpg-agent
 
 # User specific aliases and functions
 . ~/scripts/aliases
