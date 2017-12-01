@@ -4,24 +4,30 @@
 
 tids=/group_workspaces/jasmin2/tids
 
-cd $basedir
+cd $tids
 
 outfile=TIDS_files_to_retrieve
 
 echo \#\#\#\#\# > $outfile
 
-for dir in $(UM/ancil/atmos/n96e UM/ancil/atmos/n216e OCEAN)
+dir[1]=UM/ancil/atmos/n96e
+dir[2]=UM/ancil/atmos/n216e
+dir[3]=OCEAN
+
+for i in {1..3}
+
 
     do 
 
+        echo 'i am now in ' $PWD
         echo $i 
-        echo $dir
+        echo ${dir[$i]}
 
     echo \#\#\#\#\#>> $outfile
-    echo \#$dir >> $outfile
+    echo \#${dir[$i]} >> $outfile
     echo \#\#\#\#\#>> $outfile
 
-    find $dir -name "[!.]*" -type f >> $outfile 
+    find ${dir[$i]} -name "[!.]*" -type f >> $outfile 
 
     paste $outfile $outfile > 2_column_$outfile
 
