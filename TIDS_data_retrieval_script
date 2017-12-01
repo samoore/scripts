@@ -13,9 +13,10 @@ echo \#\#\#\#\# > $outfile
 dir[1]=UM/ancil/atmos/n96e
 dir[2]=UM/ancil/atmos/n216e
 dir[3]=OCEAN
+#dir4 etc
+#i am sure there is a better way of doing this but this is fine for now!
 
 for i in {1..3}
-
 
     do 
 
