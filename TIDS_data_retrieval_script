@@ -10,37 +10,12 @@ outfile=TIDS_files_to_retrieve
 
 echo \#\#\#\#\# > $outfile
 
-for i in $(seq 1 3)
+for dir in $(UM/ancil/atmos/n96e UM/ancil/atmos/n216e OCEAN)
 
     do 
 
-    if [ $i -eq 1 ]; then
-
-        dir=UM/ancil/atmos/n96e
-
         echo $i 
         echo $dir
-
-    fi
-
-    if [ $i -eq 2 ]; then
-
-        dir=UM/ancil/atmos/n216e
-
-        echo $i 
-        echo $dir
-
-    fi
-
-
-    if [ $i -eq 3 ]; then
-
-        dir=OCEAN
-
-        echo $i 
-        echo $dir
-
-    fi
 
     echo \#\#\#\#\#>> $outfile
     echo \#$dir >> $outfile
@@ -49,7 +24,6 @@ for i in $(seq 1 3)
     find $dir -name "[!.]*" -type f >> $outfile 
 
     paste $outfile $outfile > 2_column_$outfile
-
 
 done
 
