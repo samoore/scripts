@@ -10,11 +10,11 @@ outfile=TIDS_files_to_retrieve
 
 echo \#\#\#\#\# > $outfile
 
-dir[1]=UM/ancil/atmos/n96e
-dir[2]=UM/ancil/atmos/n216e
-dir[3]=OCEAN
-#dir4 etc
-#i am sure there is a better way of doing this but this is fine for now!
+
+#these variables can be defined in (for example) your ~/.bashrc file
+dir[1]=$globus_dir_001
+dir[2]=$globus_dir_002
+dir[3]=$globus_dir_003
 
 for i in {1..3}
 
