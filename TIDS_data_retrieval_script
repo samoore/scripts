@@ -5,6 +5,7 @@
 tids=/group_workspaces/jasmin2/tids
 
 cd $tids
+echo 'i am now in ' $PWD
 
 outfile=TIDS_files_to_retrieve
 
@@ -15,14 +16,16 @@ echo \#\#\#\#\# > $outfile
 dir[1]=$globus_dir_001
 dir[2]=$globus_dir_002
 dir[3]=$globus_dir_003
+dir[4]=$globus_dir_004
 
-for i in {1..3}
+echo $dir
+
+for i in {1..4}
 
     do 
 
-        echo 'i am now in ' $PWD
-        echo $i 
-        echo ${dir[$i]}
+    echo $i 
+    echo ${dir[$i]}
 
     echo \#\#\#\#\#>> $outfile
     echo \#${dir[$i]} >> $outfile
