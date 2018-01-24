@@ -5,7 +5,8 @@
 tids=/group_workspaces/jasmin2/tids
 
 cd $tids
-echo 'i am now in ' $PWD
+echo 'I am now in the top level directory where all of the retrievals will occur from, this is' $PWD
+echo ''
 
 outfile=TIDS_files_to_retrieve
 
@@ -13,19 +14,26 @@ echo \#\#\#\#\# > $outfile
 
 
 #these variables can be defined in (for example) your ~/.bashrc file
-dir[1]=$globus_dir_001
-dir[2]=$globus_dir_002
-dir[3]=$globus_dir_003
-dir[4]=$globus_dir_004
 
-echo $dir
+globus_dir_001=
+globus_dir_002=UM/ancil/atmos/n216e
+globus_dir_003=UM/ancil/data
+globus_dir_004=OCEAN
+dir[1]=UM/ancil/atmos/n96e
+dir[2]=UM/ancil/atmos/n216e
+dir[3]=UM/ancil/data
+dir[4]=OCEAN
+
+echo 'This is the array of directories which will be retrieved...'
+echo ${dir[*]}
+echo ''
 
 for i in {1..4}
 
     do 
 
-    echo $i 
-    echo ${dir[$i]}
+    echo 'Now retrieving list from' ${dir[$i]}
+    echo ''
 
     echo \#\#\#\#\#>> $outfile
     echo \#${dir[$i]} >> $outfile
@@ -40,3 +48,9 @@ done
 mv /group_workspaces/jasmin2/tids/2_column_$outfile ~/scripts/
 rm $tids/$outfile
 cd ~/scripts
+
+echo 'You can now retrieve the files you want using this command [insert command here!]' 
+
+echo ''
+
+echo 'Done. Exiting and returning to your ~/scripts directory.'
