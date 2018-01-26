@@ -3,6 +3,7 @@ initial side-by-side views = True
 use theme = color-blind
 dot icon size = medium
 initial views =  text, graph
+task states to filter out = runahead, succeeded
 task filter highlight color = PowderBlue
 sort by definition order = True
 [themes]
