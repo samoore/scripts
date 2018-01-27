@@ -65,6 +65,7 @@ alias gconall='for folder in *; do cd ~/cylc-run; cd $folder; rose suite-gcontro
 # Some git alises
 alias gita='git add .'
 alias gitb='git branch'
+alias gitbp'git push'
 alias gitac='git add . && git commit'
 alias gitacp='git add . && git commit -m "minor tweaks" && git push'
 alias gitc='git commit'
@@ -79,4 +80,5 @@ alias wtch='watch "ls -lth"'
 alias deep='cd /hpcf/working/deepsouth/'
 # alias to squeue
 alias sq='squeue'
+# go to my nobackup folder
 alias nobackup='cd /nesi/nobackup/williamsjh'
