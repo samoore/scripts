@@ -1,0 +1,6 @@
+
+# added by Miniconda2 installer
+export PATH="/Users/Jonny/miniconda2/bin:$PATH"
+
+#import aliases
+. ~/scripts/aliases

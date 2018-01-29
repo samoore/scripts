@@ -65,7 +65,7 @@ alias gconall='for folder in *; do cd ~/cylc-run; cd $folder; rose suite-gcontro
 # Some git alises
 alias gita='git add .'
 alias gitb='git branch'
-alias gitbp'git push'
+alias gitp='git push'
 alias gitac='git add . && git commit'
 alias gitacp='git add . && git commit -m "minor tweaks" && git push'
 alias gitc='git commit'
