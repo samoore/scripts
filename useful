@@ -5,3 +5,5 @@
 #append a specific suffix at the end
 for file in *.nc; do cdo setgatt,update_freq_in_hours,12 $file ${file%.*}-12h.nc; done
 
+# my conda PATH
+export PATH=/home/williamsjh/miniconda2/bin:$PATH
