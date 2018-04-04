@@ -3,7 +3,10 @@
 
 export suiteid=$1
 
-echo $suiteid
+clear
 
-grep -ir atm_step ~/cylc-run/$suiteid/work/*/*/pe_output/*|tail -1
+echo 'grep-ing for atm_step in...'
+find ~/cylc-run/$suiteid/work/*/* -name pe_output
+echo '---------------------------'
+grep -r 'Atm_Step: Timestep' ~/cylc-run/$suiteid/work/*/*/pe_output/*|tail -1
 
