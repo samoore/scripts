@@ -79,6 +79,6 @@ alias wtch='watch "ls -lth"'
 # Alias for going to my deepsouth folder
 alias deep='cd /hpcf/working/deepsouth/'
 # alias to squeue
-alias sq='squeue'
+alias sq='ssh kupe01 squeue'
 # go to my nobackup folder
 alias nobackup='cd /nesi/nobackup/williamsjh'
