@@ -84,8 +84,6 @@ alias sq='ssh kupe01 squeue'
 alias squ='ssh kupe01 squeue -u williamsjh'
 # go to my nobackup folder
 alias nobackup='cd /nesi/nobackup/williamsjh'
-#alias for the name of the local folder
-alias here='$(basename "$PWD")'
 
 
 
