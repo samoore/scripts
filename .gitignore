@@ -2,5 +2,5 @@
 *.pdf
 *.aux
 *.log
-*.nc
-*.pp
+#*.nc
+#*.pp
