@@ -62,14 +62,6 @@ alias nf-config='/opt/niwa/netcdf/AIX/4.3.3.1/parallel/bin/nf-config'
 alias myvim='/home/williamsjh/bin/vim'
 # Open all ~/cylc-run directories in GCylc
 alias gconall='for folder in *; do cd ~/cylc-run; cd $folder; rose suite-gcontrol & cd ..; done'
-# Some git alises
-alias gita='git add .'
-alias gitb='git branch'
-alias gitp='git push'
-alias gitac='git add . && git commit'
-alias gitacp='git add . && git commit -m "minor tweaks" && git push'
-alias gitc='git commit'
-alias gits='git status'
 # Alias to `cylc gscan`
 alias gscn='cylc gscan&'
 # Edit command prompt
