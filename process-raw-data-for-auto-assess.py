@@ -23,17 +23,27 @@ In this example lbproc = 192 = 64 + 128 which indicates a time mean (128) zonal 
         
 '''
 
+with open('./stratosphere.monthly.g.txt') as f:
+    lines = f.readlines()
+
+for i in range(0,len(lines)):
+    lines[i] = lines[i].replace(" ","")
+    print lines[i]
+
+
+
+
+
 #Import some modules
 
 import iris
 import iris.analysis
-import mule
 
 #Let's read in some raw model data...
 
 stashcode=['m01s30i201','m01s30i204','m01s30i205','m01s34i150']
 
-stash = iris.AttributeConstraint(STASH=stashcode[0])
+stash = iris.AttributeConstraint(STASH=str(iris.fileformats.pp.STASH(01, 30, 201)))
 
 var30201 = iris.load('/home/williamsjh/cylc-run/u-ai955/share/data/History_Data/ai955a.pg19880901',stash)
 
@@ -49,16 +59,17 @@ stash = iris.AttributeConstraint(STASH=stashcode[3])
 
 var34150 = iris.load('/home/williamsjh/cylc-run/u-ai955/share/data/History_Data/ai955a.pg19880901',stash)
 
+#Concatenate the variables
 
-#let's print the variables to the screen
+cat = iris.cube.CubeList([var30201[0],var30204[0],var30205[0],var34150[0]])
 
-print var30201
-print var30204
-print var30205
-print var34150
+#Save to an output file
 
-iris.save(var30201,'apg.pp')
-iris.save(var30201,'apg.nc')
+iris.save(cat,'apg.nc')
+
+
+
+
 
 
 
