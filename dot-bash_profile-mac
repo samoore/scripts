@@ -4,3 +4,4 @@ export PATH="/Users/Jonny/miniconda2/bin:$PATH"
 
 #import aliases
 . ~/scripts/aliases
+export PS1="\d|\t|\W> "
