@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Load modules needed to run Iris
-module load python/anaconda-2.4.1-python-2.7
-
-# Change PS1 to highlight Python environment
-export PS1="Python enabled env. > "
