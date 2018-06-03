@@ -1,1 +1,0 @@
-/home/williamsjh/NewAutoAssess/v3/autoassess/moose_queries/stratosphere.monthly.g.txt
