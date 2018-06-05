@@ -3,13 +3,13 @@
 
 export suiteid=$1
 
-export taskname=$2
+#export taskname=$2
 
 clear
 
 echo 'grep-ing for atm_step in...'
-find ~/cylc-run/$suiteid/work/*/$taskname -name pe_output
+find ~/cylc-run/$suiteid/work/*/* -iname pe_output
 echo '---------------------------'
-grep -r 'Atm_Step: Timestep' ~/cylc-run/$suiteid/work/*/$taskname/pe_output/*|tail -1
+grep -r 'Atm_Step: Timestep' ~/cylc-run/$suiteid/work/*/*/pe_output/*|tail -1
 echo '---------------------------'
 
