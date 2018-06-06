@@ -1,4 +1,4 @@
-# Script to plot NZESM run speeds as a function of processors decomposition
+# Script to plot UM run speeds as a function of processors decomposition
 # and complexity.
 
 import matplotlib.pyplot as plt

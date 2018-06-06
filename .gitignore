@@ -1,3 +1,6 @@
+*.swp
 *.pdf
 *.aux
 *.log
+#*.nc
+#*.pp

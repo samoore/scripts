@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# this is a script to see where a run has got to...
+
+export suiteid=$1
+
+#export taskname=$2
+
+clear
+
+echo 'grep-ing for atm_step in...'
+find ~/cylc-run/$suiteid/work/*/* -iname pe_output
+echo '---------------------------'
+grep -r 'Atm_Step: Timestep' ~/cylc-run/$suiteid/work/*/*/pe_output/*|tail -1
+echo '---------------------------'
+
