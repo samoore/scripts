@@ -20,15 +20,15 @@ echo ''
 . ~/.bashrc
 
 dir[1]=$globus_dir_001
-dir[2]=$globus_dir_002
-dir[3]=$globus_dir_003
-dir[4]=$globus_dir_004
+#dir[2]=$globus_dir_002
+#dir[3]=$globus_dir_003
+#dir[4]=$globus_dir_004
 
 echo 'This is the array of directories which will be retrieved...'
 echo ${dir[*]}
 echo ''
 
-for i in {1..4}
+for i in {1..1}
 
     do 
 
