@@ -2,7 +2,7 @@ cylc scan > out
 
 while read p 
     do 
-        cylc monitor ${p%% *} -o
+        cylc monitor ${p%% *} -ro
     done < out; 
 
 rm out
