@@ -1,4 +1,5 @@
 ungrouped views = graph, text
+#ungrouped views = graph
 initial side-by-side views = True
 use theme = color-blind
 dot icon size = medium
