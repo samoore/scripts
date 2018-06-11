@@ -1,5 +1,7 @@
 cylc scan > out
 
+clear
+
 while read p 
     do 
         cylc monitor ${p%% *} -ro
