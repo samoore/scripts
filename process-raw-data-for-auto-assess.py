@@ -68,8 +68,20 @@ cat = iris.cube.CubeList([var30201[0],var30204[0],var30205[0],var34150[0]])
 iris.save(cat,'apg.nc')
 
 
+import iris.fileformats.pp as pp
 
-iris.save(cat,'apg.pp')
+with open('apg.pp', 'wb') as fh:
+    for cube in cat:
+        for sub_cube, field in pp.save_pairs_from_cube(cube):
+            field.bdx = 1
+            field.bzx = sub_cube.coord('longitude').points[0] - field.bdx
+            field.lbnpt = 1
+#            print(field)
+            field.save(fh)
+
+cat = iris.cube.CubeList([cat,var34150[0]])
+
+#iris.save(cat,'apg.pp')
 
 
 
