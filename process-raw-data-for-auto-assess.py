@@ -71,25 +71,15 @@ iris.save(cat,'apg.nc')
 import iris.fileformats.pp as pp
 
 with open('apg.pp', 'wb') as fh:
+    i = 0
     for cube in cat:
+        print i
         for sub_cube, field in pp.save_pairs_from_cube(cube):
-            field.bdx = 1
-            field.bzx = sub_cube.coord('longitude').points[0] - field.bdx
-            field.lbnpt = 1
-#            print(field)
+            if i < 3:
+                field.bdx = 1
+                field.bzx = sub_cube.coord('longitude').points[0] - field.bdx
+                field.lbnpt = 1
+            else:
+                pass
             field.save(fh)
-
-cat = iris.cube.CubeList([cat,var34150[0]])
-
-#iris.save(cat,'apg.pp')
-
-
-
-
-
-
-
-
-
-
-
+        i=i+1
