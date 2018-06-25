@@ -72,10 +72,9 @@ export PS1="$HOSTNAME|\d|\t|\W> "
 # Edit command prompt
 # Edit command prompt - simple
 #export PS1="> "
+#PS1='\[\e[0;32m\u@\w/:\[\e[m '
 # Update contents of directory every 2s
 alias wtch='watch "ls -lth"'
-# Alias for going to my deepsouth folder
-alias deep='cd /hpcf/working/deepsouth/'
 # alias to squeue
 alias sq='ssh kupe01 squeue'
 # alias to squeue -u williamsjh
