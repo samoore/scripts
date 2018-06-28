@@ -1,0 +1,45 @@
+#!/bin/bash
+
+#Compares the files within a rose suite
+#usage:
+#compare_suites <suite1> <suite2>
+
+suiteone=$1
+suitetwo=$2
+
+# Convert to full paths
+firstcharone=$(echo $suiteone | cut -c 1)
+
+if [[ "$firstcharone" != "/" ]]; then
+   suiteone=$PWD/$suiteone
+fi
+
+firstchartwo=$(echo $suitetwo | cut -c 1)
+if [[ "$firstchartwo" != "/" ]]; then
+   suitetwo=$PWD/$suitetwo
+fi
+
+# Get the suite names
+suitenameone=$(echo $suiteone | awk -F/ "{print $NF}")
+suitenametwo=$(echo $suitetwo | awk -F/ "{print $NF}")
+
+for fullfile in $(find $suiteone)
+do
+
+   # Make sure we don't look in the .svn directory
+   hassvn=$(echo $fullfile | grep .svn)
+   if [[ -z $hassvn ]]; then
+   
+      # Get the file name but only after the suite name
+      file=$(echo $fullfile | awk -F "$suitenameone" '{print $2}')
+      # Check for differences
+      echo "Checking file ${file} for differences"
+      hasdiff=$(diff ${suiteone}${file} ${suitetwo}${file})
+      
+      # Use tkdiff if a difference is found
+      if [[ "$hasdiff" ]]; then
+         tkdiff ${suiteone}${file} ${suitetwo}${file} &
+      fi
+
+   fi
+done

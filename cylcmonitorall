@@ -1,0 +1,11 @@
+cylc scan > out
+
+clear
+
+while read p 
+    do 
+        cylc monitor ${p%% *} -ro
+    done < out; 
+
+rm out
+

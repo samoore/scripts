@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Unload modules needed to run Iris
-module unload python/2.7.10
-module unload scitools
-# Load . profile to return to standard PS1 which was changed in 'loadpy'
-. ~/.profile

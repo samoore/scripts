@@ -24,8 +24,10 @@ alias r='cd ~/roses'
 alias br='cd ~/branches'
 # Alias log to 'rose suite-log'
 alias log='rose suite-log'
-# Alias cr to 'cd ~/cylc-run'
-alias cr='cd ~/cylc-run'
+# Alias cr to 'cd /nesi/noackup/williamsjh/cylc-run'
+alias cr='cd /nesi/nobackup/williamsjh/cylc-run'
+# Alias deep to 'cd /nesi/nobackup/deepsouth'
+alias deep='cd /nesi/nobackup/deepsouth'
 # Alias fdg to 'fcm diff -g &'
 alias fdg='fcm diff -g &'
 # Alias for `cylc trigger` in PWD 
@@ -62,19 +64,23 @@ alias nf-config='/opt/niwa/netcdf/AIX/4.3.3.1/parallel/bin/nf-config'
 alias myvim='/home/williamsjh/bin/vim'
 # Open all ~/cylc-run directories in GCylc
 alias gconall='for folder in *; do cd ~/cylc-run; cd $folder; rose suite-gcontrol & cd ..; done'
-# Some git alises
-alias gita='git add .'
-alias gitb='git branch'
-alias gitac='git add . && git commit'
-alias gitacp='git add . && git commit -m "minor tweaks" && git push'
-alias gitc='git commit'
-alias gits='git status'
+# Some git aliases
 # Alias to `cylc gscan`
 alias gscn='cylc gscan&'
 # Edit command prompt
 export PS1="$HOSTNAME|\d|\t|\W> "
+# Edit command prompt
+# Edit command prompt - simple
+#export PS1="> "
+#PS1='\[\e[0;32m\u@\w/:\[\e[m '
 # Update contents of directory every 2s
 alias wtch='watch "ls -lth"'
-# Alias for going to my deepsouth folder
-alias deep='cd /hpcf/working/deepsouth/'
+# alias to squeue
+alias sq='ssh kupe01 squeue'
+# alias to squeue -u williamsjh
+alias squ='ssh kupe01 squeue -u williamsjh'
+# go to my nobackup folder
+alias nobackup='cd /nesi/nobackup/williamsjh'
+
+
 

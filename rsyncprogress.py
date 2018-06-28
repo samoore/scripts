@@ -1,3 +1,5 @@
+# this is from here... https://gist.github.com/JohannesBuchner/4d61eb5a42aeaad6ce90
+
 """
 Progress bar for rsync
 ========================
